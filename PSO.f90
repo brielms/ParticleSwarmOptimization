@@ -22,13 +22,22 @@ program newPSO
 	
 	inpt(1) = 1._wp
 	inpt(2) = 1._wp
-	
-	
+		
 	call PSO(test,inpt,100)
-	write(*,*) "Hello"
 	
 	contains
 	
+	
+	
+	!!
+	! 
+	!    fn   : pass the objective function to be optimized. 
+	!  params : the arguments required by fn
+	! MaxItter: Maximum number of itterations for PSO to perform.
+	! 
+	! 
+	! 
+	!!
 	subroutine PSO(fn,params,MaxItter)
 		use m_mrgref
 		use globals
