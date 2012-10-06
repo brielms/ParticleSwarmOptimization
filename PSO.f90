@@ -19,12 +19,12 @@ program newPSO
 	use globals
 	implicit none
 	real(wp), dimension(2) :: inpt
-	
+
 	inpt(1) = 1._wp
 	inpt(2) = 1._wp
-		
+
 	call PSO(test,inpt,100)
-	
+
 	contains
 	
 	
@@ -34,8 +34,6 @@ program newPSO
 	!    fn   : pass the objective function to be optimized. 
 	!  params : the arguments required by fn
 	! MaxItter: Maximum number of itterations for PSO to perform.
-	! 
-	! 
 	! 
 	!!
 	subroutine PSO(fn,params,MaxItter)
