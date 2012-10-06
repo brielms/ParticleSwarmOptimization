@@ -30,11 +30,13 @@ program newPSO
 	
 	
 	!!
-	! 
-	!    fn   : pass the objective function to be optimized. 
-	!  params : the arguments required by fn
-	! MaxItter: Maximum number of itterations for PSO to perform.
-	! 
+	!	PARTICLE SWARM OPTIMIZATION
+	!
+	!	   fn   : pass the objective function to be optimized. 
+	!   params : the arguments required by fn
+	! 	MaxItter: Maximum number of itterations for PSO to perform.
+	!	
+	!		Matthew Briel-2012 contact: brielms@gmail.com
 	!!
 	subroutine PSO(fn,params,MaxItter)
 		use m_mrgref
