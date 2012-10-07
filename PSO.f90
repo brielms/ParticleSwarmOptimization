@@ -42,7 +42,7 @@ program newPSO
 		use m_mrgref
 		use globals
 		implicit none
-		integer :: i,j,dim,bugs,itter,MaxItter
+		integer :: i,j,dim,bugs,itter,MaxItter,noProgress
 		integer, dimension(:), allocatable :: R
 		real(wp), external :: fn
 		real(wp) :: phig,phir,phiv,fbestposever
@@ -127,7 +127,13 @@ program newPSO
 			if( fbuglist(R(1)).lt.fbestposever )then
 	 	   	bestposever = buglist(R(1),:)
 	 	   	fbestposever = fbuglist(R(1))
+				noProgress = 0
+			else
+				noProgress = noProgress + 1
 			end if
+			! Exit if no progress has been made in the last 10 steps. Increase beyond 10 for more challenging optimization problems.
+			if(noProgress.ge.10) Exit
+			
 			
 			! New velocity update formula
 			call random_number(rnd3)
